@@ -2,7 +2,7 @@
 
 class Node {
   constructor(data, prev = null, next = null) {
-    if (data.length >= 1) {
+    if (data !== undefined) {
       this.data = data;
       this.prev = prev;
       this.next = next;
