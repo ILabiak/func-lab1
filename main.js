@@ -22,9 +22,16 @@ const nullF = (list) => {
 };
 
 const snoc = (list, el) => {
-  let linkedList = list;
-  linkedList.append(el);
-  return linkedList;
+  let newLinkedList = new DoubleLinkedList();
+  let currentNode = list.head;
+  let index = 0;
+  while (index < length(list)) {
+    newLinkedList.append(currentNode.data);
+    currentNode = currentNode.next;
+    index++;
+  }
+  newLinkedList.append(el);
+  return newLinkedList;
 };
 
 const length = (list) => {
@@ -38,13 +45,13 @@ const length = (list) => {
   return counter;
 };
 
-console.log("Making list with one argument using singletone function\n")
-let list = singleton(1)
-list.showList()
-console.log("\nChecking if the list is empty using nullF function\n")
-console.log(nullF(list))
-console.log("\nAdding element to the list using snoc function\n")
-snoc(list,2)
-list.showList()
-console.log("\nGetting list length using length function\n")
-console.log(length(list))
+console.log("Making list with one argument using singletone function\n");
+let list = singleton(1);
+list.showList();
+console.log("\nChecking if the list is empty using nullF function\n");
+console.log(nullF(list));
+console.log("\nAdding element to the list using snoc function\n");
+let secondList = snoc(list, 2);
+secondList.showList();
+console.log("\nGetting list length using length function\n");
+console.log(length(secondList));
