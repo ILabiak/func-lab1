@@ -15,7 +15,7 @@ const singleton = (arg) => {
 };
 
 const nullF = (list) => {
-  return (typeof list.head !== "object" || list.head === null) {
+  return (typeof list.head !== "object" || list.head === null)
 };
 
 const snoc = (list, el) => {
